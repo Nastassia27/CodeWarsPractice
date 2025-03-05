@@ -62,3 +62,46 @@ function derive2(coefficient,exponent) {
 }
 
 derive(7,8)
+
+/*Write a function that returns the total surface area and volume of a box.
+
+    The given input will be three positive non-zero integers: width, height, and depth.*/
+
+function getSize(width, height, depth){
+    let volume = width*height*depth
+    let surface = 2*(width * height+height * depth+depth *width)
+    let arr = [surface, volume]
+    return arr
+}
+
+/*Complete the function that receives as input a string, and produces outputs according to the following table:
+
+    Input	Output
+"Jabroni"	"Patron Tequila"
+"School Counselor"	"Anything with Alcohol"...*/
+function getDrinkByProfession(param){
+
+    switch (param.toLowerCase()){
+        case 'jabroni':
+            return "Patron Tequila"
+            break;
+        case "school counselor":
+            return "Anything with Alcohol"
+            break;
+        case "programmer":
+            return "Hipster Craft Beer"
+            break;
+        case "bike gang member":
+            return "Moonshine"
+            break;
+        case "politician":
+            return "Your tax dollars"
+            break;
+        case "rapper":
+            return "Cristal"
+            break;
+        default:
+            return "Beer"
+
+    }
+}
