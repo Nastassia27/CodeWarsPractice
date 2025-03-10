@@ -105,3 +105,63 @@ function getDrinkByProfession(param){
 
     }
 }
+
+/*
+You task is to implement an simple interpreter for the notorious esoteric language HQ9+ that will work for a single character input:
+
+    If the input is 'H', return 'Hello World!'
+If the input is 'Q', return the input
+If the input is '9', return the full lyrics of 99 Bottles of Beer. It should be formatted like this:
+*/
+/*function HQ9(code) {
+    let str =''
+    switch (code){
+        case 'H':
+            return 'Hello World!'
+            break;
+        case 'Q':
+            return code
+            break;
+        case '9':
+            for( let i = 99; i>0;i--){
+                if(i>1){
+                    str = str + `${i} bottles of beer on the wall, ${i} bottles of beer.
+Take one down and pass it around, ${i-1} bottles of beer on the wall.`
+                } else{
+                    str = str + `${i} bottles of beer on the wall, ${i} bottles of beer.
+Take one down and pass it around, no more bottles of beer on the wall.
+No more bottles of beer on the wall, no more bottles of beer.
+Go to the store and buy some more, 99 bottles of beer on the wall.`
+                }
+
+            }
+            return str
+            break;
+        default:
+            return
+    }
+}*/
+function HQ9(code) {
+    switch (code){
+        case 'H':
+            return 'Hello World!'
+            break;
+        case 'Q':
+            return code
+            break;
+        case '9':
+            let str =''
+            for (let i = 99; i > 0; i--) {
+                str += `${i} bottle${i === 1 ? '' : 's'} of beer on the wall, ${i} bottle${i === 1 ? '' : 's'} of beer.\n`;
+                str += `Take one down and pass it around, ${i - 1 > 0 ? i - 1 : 'no more'} bottle${i - 1 === 1 ? '' : 's'} of beer on the wall.\n`;
+                if (i > 1) str += '\n';
+            }
+            str += `No more bottles of beer on the wall, no more bottles of beer.\nGo to the store and buy some more, 99 bottles of beer on the wall.`;
+
+            return str
+
+        default:
+            return undefined
+    }
+}
+
